@@ -2,6 +2,6 @@
 
 source "https://rubygems.org"
 
-gemspec
+# gemspec
 
 gem 'kramdown-math-katex'
