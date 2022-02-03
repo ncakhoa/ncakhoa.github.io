@@ -15,30 +15,41 @@ Cách giải thông thường nhất sẽ là chỉ ra cách xây dựng một �
 Đầu tiên, ta sẽ xây dựng đồ thị ngẫu nhiên. Với mỗi cặp điểm $\{i, j\}$, xác suất tồn tại cạnh giữa 2 điểm này là $\frac12$ và các cạnh độc lập với nhau.
 
 Gọi $S$ là tập các đồ thị con gồm $k$ đỉnh. Nếu đồ thị con thứ $i$ của $S$ không phải là clique hoặc anticlique thì $A_i = 1$, ngược lại $A_i = 0$. Ta cần chứng minh
+
 $$
 P\left(\bigcap_{i=1}^{n\choose k} A_i = 1\right) > 0
 $$
+
 Gọi $A_i^C$ là phần bù của $A_i$, nghĩa là $A_i^C = 1$ khi đồ thị con thứ $i$ là clique hoặc là anticlique. Ta có:
+
 $$
 P\left(\bigcap_{i=1}^{n\choose k} A_i = 1\right) > 0\\
 \Leftrightarrow P\left(\bigcup_{i=1}^{n\choose k} A_i^C=1\right) < 1\\
 $$
-Ta cos
+
+Ta có
+
 $$
 P\left(\bigcup_{i=1}^{n\choose k} A_i^C=1\right) < \sum_{i=1}^{n\choose k}P(A_i^C=1)
 $$
+
 Với mỗi đồ thị con thứ $i$ của $S$, vì các cạnh độc lập, nên xác suất nó là clique là là $2^{-k\choose 2}, tương tự xác suất nó là anticlique là $2^{-k\choose 2}.
 
 Suy ra:
+
 $$
 P(A_i^C) = 2^{-k\choose 2} + 2^{-k\choose 2} = 2^{-k\choose 2 - 1}\\
 \Rightarrow \sum_{i=1}^{n\choose k}P(A_i^C=1) = n\choose k 2^{-k\choose 2 + 1}
 $$
+
 Lại có $n\choose k <2^{k\choose 2 - 1}$, suy ra
+
 $$
 P\left(\bigcup_{i=1}^{n\choose k} A_i^C=1\right)<n\choose k 2^{-k\choose 2 + 1}<1
 $$
+
 Hay
+
 $$
 P\left(\bigcap_{i=1}^{n\choose k} A_i = 1\right) > 0
 $$
