@@ -215,7 +215,7 @@ date_format: "%B %-d, %Y"
 timezone: "Asia/Ho_Chi_Minh"
 markdown: kramdown
 kramdown:
-   math_engine: katex
+   math_engine: MathJax
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
